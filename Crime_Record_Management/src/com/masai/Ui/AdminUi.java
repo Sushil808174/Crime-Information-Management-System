@@ -21,6 +21,7 @@ public class AdminUi {
 	public static void Login(Scanner sc) {
 		System.out.println("Please Enter your User Name ");
 		String userName = sc.next();
+		
 		System.out.println("Please Enter your password ");
 		String password = sc.next();
 		
@@ -35,16 +36,16 @@ public class AdminUi {
 				
 				switch (choice) {
 				case 1: 
-//					addCrimeDetails(sc);
+					CrimeUi.addCrimeDetails(sc);
 					break;
 				case 2: 
-//					updateCrimeDetails(sc);
+					CrimeUi.updateCrimeDetails(sc);
 					break;	
 				case 3: 
-//					addCriminalDetails(sc);
+					CriminalUi.addCriminalDetails(sc);
 					break;
 				case 4:
-//					updateCriminalDetails(sc);
+					CriminalUi.updateCriminalDetails(sc);
 					break;
 				case 5:
 //					assignCriminalToCrime();
@@ -53,13 +54,13 @@ public class AdminUi {
 //					removeCriminalFromCrime(sc);
 					break;
 				case 7:
-//					deleteCrime(sc);
+					CrimeUi.deleteCrime(sc);
 					break;
 				case 8:
-//					deleteCriminal(sc);
+					CriminalUi.deleteCriminal(sc);
 					break;
 				case 9:
-					MainUi.main(null);
+//					MainUi.main(null);
 					break;
 				default:
 					System.out.println("Invalid Input ");

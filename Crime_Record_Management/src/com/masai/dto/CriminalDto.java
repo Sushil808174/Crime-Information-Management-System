@@ -3,6 +3,8 @@ package com.masai.dto;
 import java.time.LocalDate;
 
 public interface CriminalDto {
+	public int getCriminal_id();
+	public void setCriminal_id(int criminal_id);
 	public String getName();
 	public void setName(String name);
 	public LocalDate getDob();
@@ -15,4 +17,6 @@ public interface CriminalDto {
 	public void setFirst_arrest_date(LocalDate first_arrest_date);
 	public String getArrested_from_ps_area();
 	public void setArrested_from_ps_area(String arrested_from_ps_area);
+	public CrimeDto getCrime();
+	public void setCrime(CrimeDto crime);
 }
