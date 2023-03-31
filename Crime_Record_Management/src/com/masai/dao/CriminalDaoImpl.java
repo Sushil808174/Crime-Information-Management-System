@@ -78,8 +78,22 @@ public class CriminalDaoImpl implements CriminalDao{
 	}
 
 	@Override
-	public void deleteCriminal(CriminalDto criminal) throws SomethingWentWrongException {
-		
+	public void deleteCriminal(int criminalId) throws SomethingWentWrongException {
+		Connection conn = null;
+		try {
+			conn = DBUtils.getConnectionTodatabase();
+			
+			String query = "DELETE FROM CRIMINAL WHERE CRIMINAL_ID=?";
+			
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			ps.setInt(1, criminalId);
+			
+			ps.executeUpdate();
+			
+		} catch (ClassNotFoundException |SQLException e) {
+			throw new SomethingWentWrongException("Data deleted unsuccessfully because "+e.getMessage());
+		} 
 		
 	}
 
