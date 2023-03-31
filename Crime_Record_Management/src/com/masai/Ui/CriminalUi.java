@@ -84,7 +84,16 @@ public class CriminalUi {
 	}
 
 	public static void deleteCriminal(Scanner sc) {
+		System.out.println("Please Enter Criminal Id ");
+		int criminalid = sc.nextInt();
 		
+		CriminalDao criminalDao = new CriminalDaoImpl();
+		try {
+			criminalDao.deleteCriminal(criminalid);
+			System.out.println("Data deleted successfully ");
+		} catch (SomethingWentWrongException e) {
+			System.out.println(e);
+		}
 		
 	}
 
