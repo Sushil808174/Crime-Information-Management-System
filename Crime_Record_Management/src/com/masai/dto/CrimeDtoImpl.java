@@ -3,6 +3,7 @@ package com.masai.dto;
 import java.time.LocalDate;
 
 public class CrimeDtoImpl implements CrimeDto{
+	private int crimeId;
 	private String type;
 	private String description;
 	private String ps_area;
@@ -15,7 +16,17 @@ public class CrimeDtoImpl implements CrimeDto{
 				+ ", Victim_name=" + victim_name + "\n";
 	}
 
-
+	
+	public CrimeDtoImpl(int crimeId,String type, String description, String ps_area, LocalDate date, String victim_name) {
+		super();
+		this.crimeId=crimeId;
+		this.type = type;
+		this.description = description;
+		this.ps_area = ps_area;
+		this.date = date;
+		this.victim_name = victim_name;
+	}
+	
 	public CrimeDtoImpl(String type, String description, String ps_area, LocalDate date, String victim_name) {
 		super();
 		this.type = type;
@@ -23,6 +34,15 @@ public class CrimeDtoImpl implements CrimeDto{
 		this.ps_area = ps_area;
 		this.date = date;
 		this.victim_name = victim_name;
+	}
+	
+	@Override
+	public int getCrimeId() {
+		return crimeId;
+	}
+	@Override
+	public void setCrimeId(int crimeId) {
+		this.crimeId = crimeId;
 	}
 	
 	@Override

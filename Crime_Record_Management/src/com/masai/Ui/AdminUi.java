@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class AdminUi {
 	
 	public static void displayAdminInterface() {
+		System.out.println("0. Logout his account ");
 		System.out.println("1. Add Crime Details ");
 		System.out.println("2. Update Crime Details ");
 		System.out.println("3. Add Criminal Details ");
@@ -13,7 +14,6 @@ public class AdminUi {
 		System.out.println("6. Remove Criminal from Crime ");
 		System.out.println("7. Delete Crime using Crime Id ");
 		System.out.println("8. Delete Criminal using criminal Id ");
-		System.out.println("9. Logout his account ");
 		
 	}
 	
@@ -48,10 +48,10 @@ public class AdminUi {
 					CriminalUi.updateCriminalDetails(sc);
 					break;
 				case 5:
-//					assignCriminalToCrime();
+					Crime_CriminalUi.assignCriminalToCrime(sc);
 					break;
 				case 6:
-//					removeCriminalFromCrime(sc);
+					Crime_CriminalUi.removeCriminalFromCrime(sc);
 					break;
 				case 7:
 					CrimeUi.deleteCrime(sc);
@@ -59,8 +59,8 @@ public class AdminUi {
 				case 8:
 					CriminalUi.deleteCriminal(sc);
 					break;
-				case 9:
-//					MainUi.main(null);
+				case 0:
+					System.out.println("Admin Logout ");
 					break;
 				default:
 					System.out.println("Invalid Input ");
