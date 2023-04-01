@@ -37,7 +37,7 @@ public class CriminalDaoImpl implements CriminalDao{
 			try {
 				DBUtils.closeConnection(conn);
 			} catch (SQLException e) {
-				throw new SomethingWentWrongException("Some thing went wrong ");
+				throw new SomethingWentWrongException("Something went wrong ");
 			}
 		}
 		
@@ -93,7 +93,13 @@ public class CriminalDaoImpl implements CriminalDao{
 			
 		} catch (ClassNotFoundException |SQLException e) {
 			throw new SomethingWentWrongException("Data deleted unsuccessfully because "+e.getMessage());
-		} 
+		} finally {
+			try {
+				DBUtils.closeConnection(conn);
+			} catch (SQLException e) {
+				throw new SomethingWentWrongException("Some went wrong ");
+			}
+		}
 		
 	}
 

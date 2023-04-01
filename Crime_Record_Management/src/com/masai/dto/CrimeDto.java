@@ -13,4 +13,6 @@ public interface CrimeDto {
 	public void setDate(LocalDate date);
 	public String getVictim_name();
 	public void setVictim_name(String victim_name);
+	public int getCrimeId();
+	public void setCrimeId(int crimeId);
 }
