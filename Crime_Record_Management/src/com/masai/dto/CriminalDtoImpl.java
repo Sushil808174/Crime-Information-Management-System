@@ -12,6 +12,9 @@ public class CriminalDtoImpl implements CriminalDto{
 	private String arrested_from_ps_area;
 	private CrimeDto crime;
 	
+	public CriminalDtoImpl() {
+		
+	}
 	
 	@Override
 	public int getCriminal_id() {

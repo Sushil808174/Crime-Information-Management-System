@@ -8,11 +8,12 @@ import com.masai.dao.CrimeDaoImpl;
 import com.masai.dto.CrimeDto;
 import com.masai.dto.CrimeDtoImpl;
 import com.masai.exception.SomethingWentWrongException;
+import com.masaischool.consoleColor.ConsoleColors;
 
 public class CrimeUi {
 
 	public static void addCrimeDetails(Scanner sc) {
-		System.out.println("Enter the crime type like -> Robbery, Theft, Homicide ");
+		System.out.println(ConsoleColors.GREEN+"Enter the crime type like -> Robbery, Theft, Homicide ");
 		String type = sc.next();
 		
 		System.out.println("Write some Description ");
@@ -26,7 +27,7 @@ public class CrimeUi {
 		System.out.println("Enter Date ");
 		LocalDate  date = LocalDate.parse(sc.next());
 		
-		System.out.println("Enter the victim name ");
+		System.out.println("Enter the victim name "+ConsoleColors.RESET);
 		sc.nextLine();
 		String victim_name = sc.nextLine();
 		
@@ -35,7 +36,7 @@ public class CrimeUi {
 		
 		try {
 			crimeDao.addCrimedetails(crimeDto);
-			System.out.println("Data added successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Data added successfully "+ConsoleColors.RESET);
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e.getMessage());
 		}
@@ -43,7 +44,7 @@ public class CrimeUi {
 	}
 
 	public static void updateCrimeDetails(Scanner sc) {
-		System.out.print("Enter the Crime ID ");
+		System.out.print(ConsoleColors.GREEN+"Enter the Crime ID ");
 		int crimeID = sc.nextInt();
 		System.out.print("Enter the crime type like -> Robbery, Theft, Homicide ");
 		String type = sc.next();
@@ -59,7 +60,7 @@ public class CrimeUi {
 		System.out.print("Enter Date ");
 		LocalDate  date = LocalDate.parse(sc.next());
 		
-		System.out.print("Enter the victim name ");
+		System.out.print("Enter the victim name "+ConsoleColors.RESET);
 		sc.nextLine();
 		String victim_name = sc.nextLine();
 		
@@ -69,7 +70,7 @@ public class CrimeUi {
 		try {
 			crimeDao.updateCrimeDetails(crimeDto);
 			System.out.println();
-			System.out.println("Data updated successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Data updated successfully ");
 			System.out.println();
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e.getMessage());
@@ -78,14 +79,14 @@ public class CrimeUi {
 	}
 
 	public static void deleteCrime(Scanner sc) {
-		System.out.print("Enter Crime Id");
+		System.out.print(ConsoleColors.GREEN+"Enter Crime Id "+ConsoleColors.RESET);
 		int crimeId = sc.nextInt();
 		
         CrimeDao crimeDao = new CrimeDaoImpl();
 		
 		try {
 			crimeDao.deleteCrime(crimeId);
-			System.out.println("Data deleted successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Data deleted successfully "+ConsoleColors.RESET);
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e.getMessage());
 		}
