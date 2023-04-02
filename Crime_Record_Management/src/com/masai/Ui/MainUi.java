@@ -2,13 +2,16 @@ package com.masai.Ui;
 
 import java.util.Scanner;
 
+import com.masaischool.consoleColor.ConsoleColors;
+
 public class MainUi {
 	public static void disPlayMenu() {
-		System.out.println("+--------------------+\n"
+		System.out.println(ConsoleColors.ROSY_PINK+"Welcome in our Application "+ConsoleColors.RESET);
+		System.out.println(ConsoleColors.YELLOW+"+--------------------+\n"
 				         + "| 0. Exit	     |\n"
 				         + "| 1. Admid login     |\n"
 				         + "| 2. Public          |\n"
-				         + "+--------------------+");
+				         + "+--------------------+"+ConsoleColors.RESET);
 		
 		
 	}
@@ -18,7 +21,7 @@ public class MainUi {
 		int choice = 0;
 		do {
 			disPlayMenu();
-			System.out.println("Enter Your Choice ");
+			System.out.print(ConsoleColors.GREEN+"Enter Your Choice "+ConsoleColors.RESET);
 			choice = sc.nextInt();
 			
 			switch (choice) {
@@ -26,13 +29,15 @@ public class MainUi {
 				AdminUi.Login(sc);
 				break;
 			case 2:
-//				PublicUi.PublicUse();
+				PublicUi.PublicUse(sc);
 				break;
 			case 0:
-				System.out.println("Thanks for using our Application ");
+				System.out.println();
+				System.out.println(ConsoleColors.WHITE_BACKGROUND+ConsoleColors.BLUE_BOLD+ConsoleColors.BLUE_ITALIC+"Thanks for using our Application "+ConsoleColors.RESET);
+				System.out.println();
 				break;
 			default:
-				System.out.println("Invalid Input you have given ");
+				System.out.println(ConsoleColors.RED+"Invalid Input you have given "+ConsoleColors.RESET);
 			}
 			
 			

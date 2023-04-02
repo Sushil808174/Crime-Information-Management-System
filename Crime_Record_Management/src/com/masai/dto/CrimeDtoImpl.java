@@ -15,8 +15,18 @@ public class CrimeDtoImpl implements CrimeDto{
 		return "Crimetype=" + type + ", Description=" + description + ", Ps_area=" + ps_area + ", Date=" + date
 				+ ", Victim_name=" + victim_name + "\n";
 	}
-
 	
+	public CrimeDtoImpl() {
+		
+	}
+	
+	public CrimeDtoImpl(String type, String description, String ps_area, LocalDate date, String victim_name) {
+		this.type = type;
+		this.description = description;
+		this.ps_area = ps_area;
+		this.date = date;
+		this.victim_name = victim_name;
+	}
 	public CrimeDtoImpl(int crimeId,String type, String description, String ps_area, LocalDate date, String victim_name) {
 		super();
 		this.crimeId=crimeId;
@@ -27,14 +37,6 @@ public class CrimeDtoImpl implements CrimeDto{
 		this.victim_name = victim_name;
 	}
 	
-	public CrimeDtoImpl(String type, String description, String ps_area, LocalDate date, String victim_name) {
-		super();
-		this.type = type;
-		this.description = description;
-		this.ps_area = ps_area;
-		this.date = date;
-		this.victim_name = victim_name;
-	}
 	
 	@Override
 	public int getCrimeId() {

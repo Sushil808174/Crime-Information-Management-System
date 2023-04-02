@@ -8,28 +8,29 @@ import com.masai.dao.CriminalDaoImpl;
 import com.masai.dto.CriminalDto;
 import com.masai.dto.CriminalDtoImpl;
 import com.masai.exception.SomethingWentWrongException;
+import com.masaischool.consoleColor.ConsoleColors;
 
 public class CriminalUi {
 
 	public static void addCriminalDetails(Scanner sc) {
-		System.out.println("Enter the Criminal Name ");
+		System.out.print(ConsoleColors.GREEN+"Enter the Criminal Name ");
 		sc.nextLine();
 		String name = sc.nextLine();
 		
-		System.out.println("Enter Date of Birth, Format should be like that (YYYY-MM-DD)");
+		System.out.print("Enter Date of Birth, Format should be like that (YYYY-MM-DD) ");
 		LocalDate  dob = LocalDate.parse(sc.next());
 		
-		System.out.println("Enter Gender ");
+		System.out.print("Enter Gender ");
 		String gender = sc.next();
 		
-		System.out.println("Enter identifying_mark ");
+		System.out.print("Enter identifying_mark ");
 		sc.nextLine();
 		String identifying_mark = sc.nextLine();
 		
-		System.out.println("Enter first arrested date ");
+		System.out.print("Enter first arrested date ");
 		LocalDate first_arrest_date = LocalDate.parse(sc.next());
 		
-		System.out.println("Enter the arrested_from_ps_area ");
+		System.out.print("Enter the arrested_from_ps_area "+ConsoleColors.RESET);
 		sc.nextLine();
 		String arrested_from_ps_area = sc.nextLine();
 		
@@ -39,34 +40,34 @@ public class CriminalUi {
 		
 		try {
 			criminalDao.addCriminalDetails(criminalDto);
-			System.out.println("Criminal data added successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Criminal data added successfully "+ConsoleColors.RESET);
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e);
 		}
 	}
 
 	public static void updateCriminalDetails(Scanner sc) {
-		System.out.println("Enter the Criminal Id ");
+		System.out.print(ConsoleColors.GREEN+"Enter the Criminal Id ");
 		int criminal_id = sc.nextInt();
 		
-		System.out.println("Enter the Criminal Name ");
+		System.out.print("Enter the Criminal Name ");
 		sc.nextLine();
 		String name = sc.nextLine();
 		
-		System.out.println("Enter Date of Birth, Format should be like that (YYYY-MM-DD)");
+		System.out.print("Enter Date of Birth, Format should be like that (YYYY-MM-DD) ");
 		LocalDate  dob = LocalDate.parse(sc.next());
 		
-		System.out.println("Enter Gender ");
+		System.out.print("Enter Gender ");
 		String gender = sc.next();
 		
-		System.out.println("Enter identifying_mark ");
+		System.out.print("Enter identifying_mark ");
 		sc.nextLine();
 		String identifying_mark = sc.nextLine();
 		
-		System.out.println("Enter first arrested date ");
+		System.out.print("Enter first arrested date ");
 		LocalDate first_arrest_date = LocalDate.parse(sc.next());
 		
-		System.out.println("Enter the arrested_from_ps_area ");
+		System.out.print("Enter the arrested_from_ps_area "+ConsoleColors.RESET);
 		sc.nextLine();
 		String arrested_from_ps_area = sc.nextLine();
 		
@@ -76,7 +77,7 @@ public class CriminalUi {
 		
 		try {
 			criminalDao.updateCriminalDetails(criminalDto);
-			System.out.println("Criminal data updated successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Criminal data updated successfully "+ConsoleColors.RESET);
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e);
 		}
@@ -84,13 +85,13 @@ public class CriminalUi {
 	}
 
 	public static void deleteCriminal(Scanner sc) {
-		System.out.println("Please Enter Criminal Id ");
+		System.out.print(ConsoleColors.GREEN+"Please Enter Criminal Id "+ConsoleColors.RESET);
 		int criminalid = sc.nextInt();
 		
 		CriminalDao criminalDao = new CriminalDaoImpl();
 		try {
 			criminalDao.deleteCriminal(criminalid);
-			System.out.println("Data deleted successfully ");
+			System.out.println(ConsoleColors.LIGHT_BLUE+"Data deleted successfully "+ConsoleColors.RESET);
 		} catch (SomethingWentWrongException e) {
 			System.out.println(e);
 		}
